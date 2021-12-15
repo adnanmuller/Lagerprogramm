@@ -1,1 +1,11 @@
-#index_H1{text-align: center;}
+#index_H1{text-align: center;margin-top: 30px;margin-bottom: 70px;}
+
+#headerMainpageH3{text-align: center;}
+
+#submitLog{}
+
+#containerAdminLogin{}
+
+#containerAdminLogin a{text-decoration: none;color:white;}
+
+#queryEintrag{text-align: center;}
