@@ -12,6 +12,14 @@
 </style>
 <script src=""></script>
 <body>
+
+<?php
+include_once 'functions/queryFavoriten.php';
+ ?>
+
+
+
+
   <h1 id="index_H1">Techniker Organizer</h1>
 
 
@@ -53,9 +61,9 @@
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
           <select class="form-select" aria-label="Default select example" name="problem">
             <option selected>Störung</option>
-            <option value="Ticket empty">Ticket empty</option>
-            <option value="door open">door open</option>
-            <option value="interner fehler">interner fehler</option>
+            <?php
+              echoFavoriteStörungen($queryFavoritenArray);
+             ?>
           </select>
         </div>
         <div class="mb-3 mt-3">

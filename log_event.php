@@ -57,7 +57,8 @@ $sql = "INSERT INTO `logfile` (`Datum`, `Zeit`, `Position`, `Inventory`, `Techni
  VALUES ('$date', '$time', '$position', '$inventory', '$techniker', '$problembeschreibung', '$lösung1','$lösung2', current_timestamp());";
 print_r($sql);
 echo "<br><br>";
-if ($conn->query($sql) === TRUE) {
+$result = $conn->query($sql);
+if ($result === TRUE) {
   echo "New record created successfully";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
@@ -65,10 +66,18 @@ if ($conn->query($sql) === TRUE) {
 
 
 
-if ($conn->query($sql) === TRUE) {
+if ($result === TRUE) {
+    $conn->close();
   header('Location:index.php?query=true');
-  $conn->close();
+
 }
+
+
+
+
+
+
+
 
 
 
