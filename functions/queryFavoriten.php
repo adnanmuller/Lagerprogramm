@@ -1,6 +1,6 @@
 <?php
 
-
+include_once 'connectDB.php';
 
 
 $servername = "localhost";
@@ -10,9 +10,9 @@ $DBname="techniker";
 
 // Create connection
 
-  $connQueryFavoriten = new mysqli($servername, $username, $password,$DBname);
+  $connQueryFavoriten = connectDB($servername,$username,$password,$DBname);
 
-$sqlLoopFavoriten="SELECT Störungen FROM `event_favoriten`";
+$sqlLoopFavoriten="SELECT Stoerungen FROM `event_favoriten`";
 
 $queryFavoritenArray = $connQueryFavoriten->query($sqlLoopFavoriten);
 
@@ -25,7 +25,7 @@ function echoFavoriteStörungen($var1){
   if ($var1->num_rows > 0) {
     // output data of each row
     while($row = $var1->fetch_assoc()) {
-      echo '<option value="'.$row["Störungen"].'">'.$row["Störungen"].'</option>' ;
+      echo '<option value="'.$row["Stoerungen"].'">'.$row["Stoerungen"].'</option>' ;
     }
   } else {
     echo "0 results";

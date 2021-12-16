@@ -15,6 +15,7 @@
 
 <?php
 include_once 'functions/queryFavoriten.php';
+include_once 'functions/connectDB.php';
  ?>
 
 
@@ -60,7 +61,7 @@ include_once 'functions/queryFavoriten.php';
         <div class="mb-3 mt-3">
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
           <select class="form-select" aria-label="Default select example" name="problem">
-            <option selected>Störung</option>
+            <option selected>Stoerung</option>
             <?php
               echoFavoriteStörungen($queryFavoritenArray);
              ?>
@@ -84,7 +85,7 @@ include_once 'functions/queryFavoriten.php';
 
 
     <div class="p-3 flex-fill " id="containerAdminLogin">
-      <button type="button" class="btn btn-primary" ><a href="admin.php">Administrator</a></button>
+      <button type="button" class="btn btn-primary" ><a href="loginAdmin.php">Administrator</a></button>
 
 </div>
 
@@ -100,7 +101,11 @@ include_once 'functions/queryFavoriten.php';
   }
     ?>
 
-
+    <input type="text" name="city" list="cityname">
+    <datalist id="cityname">
+        <option value="Blida">
+        <option value="OuledSlama">
+    </datalist>
 </body>
 </html>
 

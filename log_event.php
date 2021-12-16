@@ -53,7 +53,7 @@ echo "Connected successfully<br><br><br>";
 
 
 
-$sql = "INSERT INTO `logfile` (`Datum`, `Zeit`, `Position`, `Inventory`, `Techniker`, `Problembeschreibung`, `Problemlösung_primär`, `Problemlösung_sekundär`, `Timestamp`)
+$sql = "INSERT INTO `logfile` (`Datum`, `Zeit`, `Position`, `Inventory`, `Techniker`, `Problembeschreibung`, `Problemloesung_primaer`, `Problemloesung_sekundaer`, `Timestamp`)
  VALUES ('$date', '$time', '$position', '$inventory', '$techniker', '$problembeschreibung', '$lösung1','$lösung2', current_timestamp());";
 print_r($sql);
 echo "<br><br>";

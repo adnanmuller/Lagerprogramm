@@ -17,28 +17,33 @@
 </style>
 <script src=""></script>
 <body>
+  <?php
+  // Initialize the session
+  session_set_cookie_params(0);
+  session_start();
 
-<h1 id="admin_H1">Login Administrator</h1>
 
-<form action="login.php" id="loginFormAdmin" method="post">
-  <div class="mb-3 mt-3">
-    <label for="adminBenuzer" class="form-label">Benuzer:</label>
-    <input type="text" class="form-control" id="adminBenuzer" placeholder="Username" name="adminBenuzer">
-  </div>
-  <div class="mb-3">
-    <label for="pwdAdmin" class="form-label">Password:</label>
-    <input type="password" class="form-control" id="pwdAdmin" placeholder="Enter password" name="pwdAdmin">
-  </div>
-  <div class="form-check mb-3">
-  </div>
-  <div class="d-flex justify-content-center">
-  <button type="submit" class="btn btn-primary">Eingeben</button>
-</div>
-</form>
+  // inactive in seconds
+  $inactive = 600;
+  if( !isset($_SESSION['timeout']) )
+  $_SESSION['timeout'] = time() + $inactive;
 
-<div class="d-flex justify-content-center">
-<button type="submit" class="btn btn-primary" id="goBackButton"><a href="index.php">Zurück</a></button>
-</div>
+  $session_life = time() - $_SESSION['timeout'];
+
+  if($session_life > $inactive)
+  {  session_destroy(); header("Location:index.php");     }
+
+  $_SESSION['timeout']=time();
+
+  // Check if the user is logged in, if not then redirect him to login page
+  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true ){
+      header("location: index.php");
+      exit;
+  }
+  ?>
+<h1 id="admin_H1">Techniker Organizer Administration</h1>
+<a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+
 
 
 
