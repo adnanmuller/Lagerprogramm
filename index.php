@@ -7,6 +7,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="JS/main.js"></script>
+
 <link rel="stylesheet" href="CSS/styles.css">
 <style>
 </style>
@@ -22,8 +25,10 @@ include_once 'functions/connectDB.php';
 
 
   <h1 id="index_H1">Techniker Organizer</h1>
-
-
+  <div id="clockWrapper">
+<span class="digital-clock">00:00:00</span>
+<span class="digital-clock-ampm">00:00:00</span>
+</div>
 
   <div class="d-flex">
     <div class="p-2  flex-fill"><h3 id="headerMainpageH3">DRGT Events</h3></div>
@@ -33,11 +38,11 @@ include_once 'functions/connectDB.php';
         <div class="d-flex">
         <div class="mb-3 mt-3  flex-fill">
           <label for="Datum" class="form-label">Datum:</label>
-          <input type="date" class="form-control" id="dateFrom" placeholder="Enter date" name="Datum">
+          <input type="date" class="form-control" id="dateFrom" placeholder="Enter date" value="<?php echo date('Y-m-d')?>" name="Datum">
         </div>
         <div class="mb-3 mt-3 flex-fill">
           <label for="time" class="form-label">Zeit:</label>
-          <input type="time" class="form-control" id="timeForm" placeholder="Enter time" name="time">
+          <input type="time" class="form-control" id="timeForm" placeholder="Enter time" value="<?php echo date('H:i', time())?>;" name="time">
         </div>
         <div class="mb-3 mt-3 flex-fill">
           <label for="position" class="form-label">Position:</label>
@@ -60,12 +65,12 @@ include_once 'functions/connectDB.php';
 
         <div class="mb-3 mt-3">
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
-          <select class="form-select" aria-label="Default select example" name="problem">
-            <option selected>Stoerung</option>
+          <input type="text" class="form-control" name="problem" list="cityname">
+          <datalist id="cityname">
             <?php
               echoFavoriteStörungen($queryFavoritenArray);
              ?>
-          </select>
+          </datalist>
         </div>
         <div class="mb-3 mt-3">
           <label for="PL1" class="form-label">Problemlösung Primär:</label>
@@ -84,7 +89,7 @@ include_once 'functions/connectDB.php';
     </div>
 
 
-    <div class="p-3 flex-fill " id="containerAdminLogin">
+    <div class=" flex-fill " id="containerAdminLogin">
       <button type="button" class="btn btn-primary" ><a href="loginAdmin.php">Administrator</a></button>
 
 </div>
@@ -99,13 +104,11 @@ include_once 'functions/connectDB.php';
    echo "<p id='queryEintrag' class='text-success'>Eintrag wurde erfolgreich gespeichert.</p>";
       }
   }
+
+
     ?>
 
-    <input type="text" name="city" list="cityname">
-    <datalist id="cityname">
-        <option value="Blida">
-        <option value="OuledSlama">
-    </datalist>
+
 </body>
 </html>
 
