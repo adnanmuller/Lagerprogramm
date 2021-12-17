@@ -42,7 +42,40 @@
   }
   ?>
 <h1 id="admin_H1">Techniker Organizer Administration</h1>
-<a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+<div id="adminAusslogen">
+<a href="logout.php" class="btn btn-danger ml-3" >Ausslogen</a>
+</div>
+<h2>Favoriten Updaten</h2>
+<div id="middlePanelAdmin">
+<div class="d-flex">
+<div class="p-2 bg-info flex-fill" id="middlePanel">
+    <form action="updateFavoriten.php" method="post">
+      <div class="d-flex">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
+        <input type="text" class="form-control" name="problem" >
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="PL1" class="form-label">Problemlösung Primär:</label>
+        <input type="text" class="form-control" id="PL1Form" placeholder="Lösung Primär" name="PL1">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="PL2" class="form-label">Problemlösung sekundär:</label>
+        <input type="text" class="form-control" id="PL2Form" placeholder="Lösung sekundär" name="PL2">
+      </div>
+      <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary " id="submitLog">Eingeben</button>
+    </div>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+</div>
 
 
 

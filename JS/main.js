@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 function clockUpdate() {
   var date = new Date();
+  console.log(date);
   //$('.digital-clock').css({'color': '#fff', 'text-shadow': '0 0 6px #ff0'});
   function addZero(x) {
     if (x < 10) {
@@ -36,10 +37,11 @@ function clockUpdate() {
     }
   }
 
-  var h = addZero(twelveHour(date.getHours()));
+
+  var h = addZero(date.getHours());
   var m = addZero(date.getMinutes());
   var s = addZero(date.getSeconds());
   var ampm=addZero(AM_PM(date.getHours()));
   $('.digital-clock').text(h + ':' + m + ':' + s );
-  $('.digital-clock-ampm').text(ampm);
+  //$('.digital-clock-ampm').text(ampm);
 }

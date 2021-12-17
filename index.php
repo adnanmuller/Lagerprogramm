@@ -19,6 +19,7 @@
 <?php
 include_once 'functions/queryFavoriten.php';
 include_once 'functions/connectDB.php';
+
  ?>
 
 
@@ -27,13 +28,15 @@ include_once 'functions/connectDB.php';
   <h1 id="index_H1">Techniker Organizer</h1>
   <div id="clockWrapper">
 <span class="digital-clock">00:00:00</span>
-<span class="digital-clock-ampm">00:00:00</span>
+<!--<span class="digital-clock-ampm"></span>-->
 </div>
 
   <div class="d-flex">
-    <div class="p-2  flex-fill"><h3 id="headerMainpageH3">DRGT Events</h3></div>
-    <div class="p-2 bg-info flex-fill">
 
+    <div class="p-2  flex-fill" id="leftPanel"><h3 id="headerMainpageH3">DRGT Events</h3></div>
+
+
+  <div class="p-2 bg-info flex-fill" id="middlePanel">
       <form action="log_event.php" method="post">
         <div class="d-flex">
         <div class="mb-3 mt-3  flex-fill">
@@ -65,20 +68,30 @@ include_once 'functions/connectDB.php';
 
         <div class="mb-3 mt-3">
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
-          <input type="text" class="form-control" name="problem" list="cityname">
+          <input type="text" class="form-control"  name="problem" list="cityname"  value=" ">
           <datalist id="cityname">
             <?php
-              echoFavoriteStörungen($queryFavoritenArray);
+              echoFavoriteFilter(1);
              ?>
           </datalist>
         </div>
         <div class="mb-3 mt-3">
           <label for="PL1" class="form-label">Problemlösung Primär:</label>
-          <input type="text" class="form-control" id="PL1Form" placeholder="Lösung Primär" name="PL1">
+          <input type="text" class="form-control" id="PL1Form" value=" " list="loesung1"  name="PL1">
+          <datalist id="loesung1">
+            <?php
+              echoFavoriteFilter(2);
+            ?>
+          </datalist>
         </div>
         <div class="mb-3 mt-3">
           <label for="PL2" class="form-label">Problemlösung sekundär:</label>
-          <input type="text" class="form-control" id="PL2Form" placeholder="Lösung sekundär" name="PL2">
+          <input type="text" class="form-control" id="PL2Form" value=" " list="loesung2"  name="PL2">
+          <datalist id="loesung2">
+            <?php
+              echoFavoriteFilter(3);
+            ?>
+          </datalist>
         </div>
         <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-primary " id="submitLog">Eingeben</button>
@@ -104,7 +117,6 @@ include_once 'functions/connectDB.php';
    echo "<p id='queryEintrag' class='text-success'>Eintrag wurde erfolgreich gespeichert.</p>";
       }
   }
-
 
     ?>
 

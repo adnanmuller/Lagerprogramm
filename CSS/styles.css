@@ -4,13 +4,17 @@
 
 #submitLog{}
 
-#containerAdminLogin{margin-left: 1px;}
+#containerAdminLogin{margin-left: 1px;width: 20%;}
 
 #containerAdminLogin a{text-decoration: none;color:white;}
 
 #queryEintrag{text-align: center;}
 
 #clockWrapper{text-align: center;margin: 0;padding: 0;}
+
+#leftPanel{width: 20%;}
+
+#middlePanel{width: 80%;}
 
 .digital-clock {
   margin:0;

@@ -12,26 +12,64 @@ $DBname="techniker";
 
   $connQueryFavoriten = connectDB($servername,$username,$password,$DBname);
 
-$sqlLoopFavoriten="SELECT Stoerungen FROM `event_favoriten`";
+$sqlLoopFavoriten="SELECT * FROM `event_favoriten`";
 
 $queryFavoritenArray = $connQueryFavoriten->query($sqlLoopFavoriten);
 
-//print_r($queryFavoritenArray);
 
-
-
-function echoFavoriteStörungen($var1){
-
-  if ($var1->num_rows > 0) {
-    // output data of each row
-    while($row = $var1->fetch_assoc()) {
-    //  echo '<option value="'.$row["Stoerungen"].'">'.$row["Stoerungen"].'</option>' ;
-      echo '<option value="'.$row["Stoerungen"].'">';
+function echoFavoriteFilter($var1){
+  $con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
+  // Check connection
+  if (mysqli_connect_errno())
+    {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-  } else {
-    echo "0 results";
+
+  $sql="SELECT * FROM `event_favoriten`";
+
+  if ($result=mysqli_query($con,$sql))
+    {
+      if($var1==1){
+        while ($row=mysqli_fetch_assoc($result))
+          {
+              echo '<option value="'.$row["Stoerungen"].'" id="stoerung'.$row["id"].'">';
+          }
+      }elseif ($var1==2) {
+        while ($row=mysqli_fetch_assoc($result))
+          {
+            if($row["problemloesung_sekundaer"]==0){
+              $row["problemloesung_sekundaer"]=" ";
+              echo '<option value="'.$row["problemloesung_primaer"].'" id="stoerungA'.$row["id"].'">';
+            }else{
+                echo '<option value="'.$row["problemloesung_primaer"].'" id="stoerungA'.$row["id"].'">';
+            }
+
+          }
+      }elseif ($var1==3) {
+        while ($row=mysqli_fetch_assoc($result))
+          {
+            if($row["problemloesung_sekundaer"]==0){
+            //  $row["problemloesung_sekundaer"]=" ";
+            //  echo '<option value="'.$row["problemloesung_sekundaer"].'" id="stoerungB'.$row["id"].'">';
+            }else{
+                echo '<option value="'.$row["problemloesung_sekundaer"].'" id="stoerungB'.$row["id"].'">';
+            }
+
+          }
+      }
+
+
+    // Free result set
+    mysqli_free_result($result);
   }
+
+  mysqli_close($con);
+
 }
+
+
+
+
 
 
 
