@@ -8,6 +8,7 @@ $username = "client";
 $password = "clientCasinoBasel";
 $DBname="techniker";
 
+
 // Create connection
 
   $connQueryFavoriten = connectDB($servername,$username,$password,$DBname);
@@ -18,6 +19,7 @@ $queryFavoritenArray = $connQueryFavoriten->query($sqlLoopFavoriten);
 
 
 function echoFavoriteFilter($var1){
+
   $con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
   // Check connection
   if (mysqli_connect_errno())
@@ -37,7 +39,9 @@ function echoFavoriteFilter($var1){
 
           }
       }elseif ($var1==2) {
+
         while ($row=mysqli_fetch_assoc($result))
+
           {
             if($row["problemloesung_sekundaer"]==0){
               $row["problemloesung_sekundaer"]=" ";
@@ -46,7 +50,9 @@ function echoFavoriteFilter($var1){
                 echo '<option value="'.$row["problemloesung_primaer"].'" idBind3="stoerungA'.$row["id"].'">';
             }
 
+
           }
+
       }elseif ($var1==3) {
         while ($row=mysqli_fetch_assoc($result))
           {

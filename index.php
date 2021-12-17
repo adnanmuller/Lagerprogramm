@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="JS/main.js"></script>
 <script type="text/javascript" src="JS/bindProblem12.js"></script>
+<script type="text/javascript" src="JS/CookieForTechName.js"></script>
 <link rel="stylesheet" href="CSS/styles.css">
 <style>
 </style>
@@ -57,8 +58,8 @@ include_once 'functions/connectDB.php';
         </div>
         <div class="mb-3 mt-3 flex-fill">
           <label for="techniker" class="form-label">Techniker:</label>
-          <select class="form-select" aria-label="Default select example" name="techniker">
-            <option selected>Select techniker</option>
+          <select class="form-select" aria-label="Default select example" id="TechnikerID" name="techniker">
+            <option >Select techniker</option>
             <option value="Sarika">Sarika</option>
             <option value="Nicolas">Nicolas</option>
             <option value="Alfredo">Alfredo</option>
@@ -68,7 +69,7 @@ include_once 'functions/connectDB.php';
 
         <div class="mb-3 mt-3">
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
-          <input type="text" class="form-control" idbind=""  name="problem" list="cityname" id="PLForm" value=" ">
+          <input type="text" class="form-control" idbind=""  name="problem" list="cityname" id="PLForm" value="  ">
           <datalist id="cityname">
             <?php
               echoFavoriteFilter(1);
