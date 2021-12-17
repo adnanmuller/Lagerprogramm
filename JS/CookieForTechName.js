@@ -14,13 +14,21 @@ function getTechName(){
   var TechnikerValue=document.getElementById("TechnikerID").value;
   console.log("eventTech");
   console.log(TechnikerValue);
-setCookie("techniker",TechnikerValue,1);
+setCookie("techniker",TechnikerValue,700);
 console.log(document.cookie);
 document.getElementById("TechnikerID").value=getCookie("techniker");
 }
 
 function getTechNamerRefresh(){
-document.getElementById("TechnikerID").value=getCookie("techniker");
+  if(getCookie("techniker")==""){
+        return;
+
+
+  }else {
+    document.getElementById("TechnikerID").value=getCookie("techniker");
+
+  }
+
 }
 
 

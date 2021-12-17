@@ -2,7 +2,13 @@ console.log("hallo adi");
 
 $(document).ready(function() {
   clockUpdate();
-  setInterval(clockUpdate, 1000);
+  setInterval(clockUpdate, 6000);
+
+
+
+  setTimeout(function(){
+      document.getElementById('hideMe').className = 'waa';
+  }, 5000);
 })
 
 function clockUpdate() {
@@ -42,6 +48,6 @@ function clockUpdate() {
   var m = addZero(date.getMinutes());
   var s = addZero(date.getSeconds());
   var ampm=addZero(AM_PM(date.getHours()));
-  $('.digital-clock').text(h + ':' + m + ':' + s );
+  $('.digital-clock').text(h + ':' + m  );
   //$('.digital-clock-ampm').text(ampm);
 }

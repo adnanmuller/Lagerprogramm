@@ -15,7 +15,7 @@
 <style>
 </style>
 <script src=""></script>
-<body>
+<body id="body">
 
 <?php
 include_once 'functions/queryFavoriten.php';
@@ -38,7 +38,7 @@ include_once 'functions/connectDB.php';
 
 
   <div class="p-2 bg-info flex-fill" id="middlePanel">
-      <form action="log_event.php" method="post">
+      <form action="log_event.php" method="post" autocomplete="on">
         <div class="d-flex">
         <div class="mb-3 mt-3  flex-fill">
           <label for="Datum" class="form-label">Datum:</label>
@@ -59,8 +59,7 @@ include_once 'functions/connectDB.php';
         <div class="mb-3 mt-3 flex-fill">
           <label for="techniker" class="form-label">Techniker:</label>
           <select class="form-select" aria-label="Default select example" id="TechnikerID" name="techniker">
-            <option >Select techniker</option>
-            <option value="Sarika">Sarika</option>
+            <option selected value="Sarika">Sarika</option>
             <option value="Nicolas">Nicolas</option>
             <option value="Alfredo">Alfredo</option>
           </select>
@@ -70,7 +69,7 @@ include_once 'functions/connectDB.php';
         <div class="mb-3 mt-3">
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
           <input type="text" class="form-control" idbind=""  name="problem" list="cityname" id="PLForm" value="  ">
-          <datalist id="cityname">
+          <datalist id="cityname" >
             <?php
               echoFavoriteFilter(1);
              ?>
@@ -115,7 +114,7 @@ include_once 'functions/connectDB.php';
   <?php
     if(isset($_GET['query'])){
       if($_GET['query']==true){
-   echo "<p id='queryEintrag' class='text-success'>Eintrag wurde erfolgreich gespeichert.</p>";
+   echo "<p id='queryEintrag' class='text-success ' >Eintrag wurde erfolgreich gespeichert.</p>";
       }
   }
 
