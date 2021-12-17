@@ -75,7 +75,7 @@ include_once 'functions/connectDB.php';
              ?>
           </datalist>
         </div>
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="hovertriggerLoesung">
           <label for="PL1" class="form-label">Problemlösung Primär:</label>
           <input type="text" class="form-control" id="PL1Form" value=" " list="loesung1"  name="PL1">
           <datalist id="loesung1">

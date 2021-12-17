@@ -4,12 +4,15 @@ $( document ).ready(function() {
   console.log("bindproblem");
 
   var problemSelector=document.getElementById("PLForm");
+  var problemSelector1extended=document.getElementById("hovertriggerLoesung");
   var problemSelector1=document.getElementById("PL1Form");
   var problemSelector2=document.getElementById("cityname");
   problemSelector.addEventListener("keydown", myThirdFunction);
   problemSelector.addEventListener("click", myThirdFunction);
   problemSelector.addEventListener("mouseout", myThirdFunction);
   problemSelector1.addEventListener("mouseout", myThirdFunction);
+  problemSelector1extended.addEventListener("mouseover", myThirdFunction);
+
 
   var blockAutofillIn=false;
 
