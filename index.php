@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="JS/main.js"></script>
-
+<script type="text/javascript" src="JS/bindProblem12.js"></script>
 <link rel="stylesheet" href="CSS/styles.css">
 <style>
 </style>
@@ -45,7 +45,7 @@ include_once 'functions/connectDB.php';
         </div>
         <div class="mb-3 mt-3 flex-fill">
           <label for="time" class="form-label">Zeit:</label>
-          <input type="time" class="form-control" id="timeForm" placeholder="Enter time" value="<?php echo date('H:i', time())?>;" name="time">
+          <input type="time" class="form-control" id="timeForm" placeholder="Enter time"  name="time">
         </div>
         <div class="mb-3 mt-3 flex-fill">
           <label for="position" class="form-label">Position:</label>
@@ -68,7 +68,7 @@ include_once 'functions/connectDB.php';
 
         <div class="mb-3 mt-3">
           <label for="problembeschreibung" class="form-label">Problembeschreibung:</label>
-          <input type="text" class="form-control"  name="problem" list="cityname"  value=" ">
+          <input type="text" class="form-control" idbind=""  name="problem" list="cityname" id="PLForm" value=" ">
           <datalist id="cityname">
             <?php
               echoFavoriteFilter(1);
@@ -119,8 +119,9 @@ include_once 'functions/connectDB.php';
   }
 
     ?>
-
-
+<!--for debugg
+<p id="demo">ddd</p>
+-->
 </body>
 </html>
 

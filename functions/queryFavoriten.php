@@ -32,16 +32,18 @@ function echoFavoriteFilter($var1){
       if($var1==1){
         while ($row=mysqli_fetch_assoc($result))
           {
-              echo '<option value="'.$row["Stoerungen"].'" id="stoerung'.$row["id"].'">';
+              echo '<option value="'.$row["Stoerungen"].'" idBind="'.$row["problemloesung_primaer"].'">';
+
+
           }
       }elseif ($var1==2) {
         while ($row=mysqli_fetch_assoc($result))
           {
             if($row["problemloesung_sekundaer"]==0){
               $row["problemloesung_sekundaer"]=" ";
-              echo '<option value="'.$row["problemloesung_primaer"].'" id="stoerungA'.$row["id"].'">';
+              echo '<option value="'.$row["problemloesung_primaer"].'" idBind2="stoerungA'.$row["id"].'">';
             }else{
-                echo '<option value="'.$row["problemloesung_primaer"].'" id="stoerungA'.$row["id"].'">';
+                echo '<option value="'.$row["problemloesung_primaer"].'" idBind3="stoerungA'.$row["id"].'">';
             }
 
           }
