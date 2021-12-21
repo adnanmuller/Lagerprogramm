@@ -16,8 +16,8 @@ $( document ).ready(function() {
 
   var blockAutofillIn=false;
 
-    problemSelector1.addEventListener("keydown", stopAutofillIn);
-        problemSelector2.addEventListener("keydown", stopAutofillIn);
+    problemSelector1.addEventListener("keyup", stopAutofillIn);
+        problemSelector2.addEventListener("keyup", stopAutofillIn);
   function myThirdFunction() {
   //  var problemSelectorIDbind=problemSelector.getAttribute("idBind");
   //  var problemSelectorIDbind=document.querySelector("options[value=problemSelectorValue]");
@@ -43,7 +43,18 @@ $( document ).ready(function() {
   }
 
 function stopAutofillIn(){
-  blockAutofillIn=true;
+  console.log("lector "+problemSelector1.value);
+if(problemSelector1.value==0){
+  console.log("problemselector==0");
+  blockAutofillIn=false;
+  return;
+}else{
+        blockAutofillIn=true;
+}
+
+
+
+
 
 }
 });
