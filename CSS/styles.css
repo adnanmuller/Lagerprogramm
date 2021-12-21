@@ -56,11 +56,20 @@
 }
 
 #letzteEinträge{margin-top: 100px;background-color: white;
-border-radius: 10px;}
+border-radius: 10px; }
+
+#tableHeadSticky {position: sticky;top: 0;background-color: white;}
 
 #letzteEinträge td {
   overflow: auto;
 white-space: nowrap;
 }
 
+#letzteEinträge tr{
+  transition: 0.7s;
+}
+
+#letzteEinträge tr:hover {
+background-color: #0DCAF0;
+}
 #fixWidthDate{min-width: 100px;}

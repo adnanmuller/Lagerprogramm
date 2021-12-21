@@ -102,29 +102,31 @@ include_once 'functions/queryEintraege.php';
       <div id="letzteEinträge">
 
 
-      <h4 class="text-center">Letzte Einträge</h4>
-      <table class="table table-striped" >
-      <thead>
-     <tr>
-       <th id="fixWidthDate">Datum</th>
-       <th>Zeit</th>
-       <th>Position</th>
-       <th>Inventory</th>
-       <th>Techniker</th>
-       <th>Problembeschreibung</th>
-       <th>Problemlösung Primär</th>
-       <th>Problemlösung sekundär</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <?php
-queryEintraege(0);
-        ?>
-     </tr>
+          <h4 class="text-center">Letzte Einträge</h4>
+          <table class="table table-striped" >
+          <thead id="tableHeadSticky" >
+         <tr>
+           <th id="fixWidthDate">Datum</th>
+           <th>Zeit</th>
+           <th>Position</th>
+           <th>Inventory</th>
+           <th>Techniker</th>
+           <th>Problembeschreibung</th>
+           <th>Problemlösung Primär</th>
+           <th>Problemlösung sekundär</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <?php
+    queryEintraege(0);
+            ?>
+         </tr>
 
-   </tbody>
- </table>
+       </tbody>
+     </table>
+
+
 </div>
     </div>
 
