@@ -54,3 +54,13 @@
 #hideMe.waa {
     opacity:0;
 }
+
+#letzteEinträge{margin-top: 100px;background-color: white;
+border-radius: 10px;}
+
+#letzteEinträge td {
+  overflow: auto;
+white-space: nowrap;
+}
+
+#fixWidthDate{min-width: 100px;}

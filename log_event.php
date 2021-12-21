@@ -19,6 +19,10 @@ $problembeschreibung=$_POST["problem"];
 $lösung1=$_POST["PL1"];
 $lösung2=$_POST["PL2"];
 
+
+//if($lösung1===0){$lösung1=" ";}
+//if($lösung2===0){$lösung1=" ";}
+
 echo $date." Type: ".gettype($date)."<br>";
 echo $time." Type: ".gettype($time)."<br>";
 echo $position." Type: ".gettype($position)."<br>";

@@ -59,7 +59,7 @@ if ($result === TRUE) {
 
 if ($result === TRUE) {
     $conn->close();
-  header('Location:admin.php?query=true');
+ header('Location:admin.php?query=true');
 
 }
 

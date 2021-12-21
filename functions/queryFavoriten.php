@@ -34,7 +34,7 @@ function echoFavoriteFilter($var1){
       if($var1==1){
         while ($row=mysqli_fetch_assoc($result))
           {
-              echo '<option value="'.$row["Stoerungen"].'" idBind="'.$row["problemloesung_primaer"].'">';
+              echo '<option value="'.$row["Stoerungen"].'" idBind="'.$row["problemloesung_primaer"].'" idBindA="'.$row["problemloesung_sekundaer"].'" >';
 
 
           }
