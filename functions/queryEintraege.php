@@ -20,7 +20,7 @@ function queryEintraege($var1){
         while ($row=mysqli_fetch_assoc($result))
           {
             //  echo '<option value="'.$row["Stoerungen"].'" idBind="'.$row["problemloesung_primaer"].'" idBindA="'.$row["problemloesung_sekundaer"].'" >';
-              echo '<tr><td>'.$row["Datum"].'</td><td>'.$row["Zeit"].'</td><td>'.$row["Position"].'</td><td>'.$row["Inventory"].'</td><td>'.$row["Techniker"].'</td><td>'.$row["Problembeschreibung"].'</td><td>'.$row["Problemloesung_primaer"].'</td><td>'.$row["Problemloesung_sekundaer"].'</td></tr>';
+              echo '<tr><td>'.$row["Datum"].'</td><td>'.$row["Zeit"].'</td><td>'.$row["Position"].'</td><td>'.$row["Inventory"].'</td><td>'.$row["Techniker"].'</td><td>'.$row["Problembeschreibung"].'</td><td>'.$row["Problemloesung_primaer"].'</td><td>'.$row["Problemloesung_sekundaer"].'</td><td><input type="checkbox"></td></tr>';
           }
           }
 

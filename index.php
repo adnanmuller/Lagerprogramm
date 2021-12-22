@@ -99,10 +99,19 @@ include_once 'functions/queryEintraege.php';
       </div>
 
       </form>
+
       <div id="letzteEinträge">
 
 
-          <h4 class="text-center">Letzte Einträge</h4>
+          <h4 class="text-center ">Letzte Einträge</h4>
+          <div id="wrapperAndernLoschen" class="text-center ">
+            <form class="" action="index.html" method="post">
+              <button type="button" class="btn btn-warning">Ändern</button>
+              <button type="button" class="btn btn-danger">Löschen</button>
+              <button type="button" class="btn btn-primary">Mehr</button>
+
+
+          </div>
           <table class="table table-striped" >
           <thead id="tableHeadSticky" >
          <tr>
@@ -167,7 +176,7 @@ include_once 'functions/queryEintraege.php';
 
 
 
-
+//echo(phpinfo());
 
 
 ?>
