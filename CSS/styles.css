@@ -75,3 +75,7 @@ background-color: #0DCAF0;
 #fixWidthDate{min-width: 100px;}
 
 #wrapperAndernLoschen{margin-bottom: 10px;}
+
+#mySwitch1, #mySwitch2{
+  position:relative;left: 46%;
+}

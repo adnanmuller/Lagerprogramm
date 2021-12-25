@@ -11,6 +11,7 @@
 <script type="text/javascript" src="JS/main.js"></script>
 <script type="text/javascript" src="JS/bindProblem12.js"></script>
 <script type="text/javascript" src="JS/CookieForTechName.js"></script>
+<script type="text/javascript" src="JS/historyLoeschen.js"></script>
 <link rel="stylesheet" href="CSS/styles.css">
 <style>
 </style>
@@ -105,14 +106,23 @@ include_once 'functions/queryEintraege.php';
 
           <h4 class="text-center ">Letzte Einträge</h4>
           <div id="wrapperAndernLoschen" class="text-center ">
-            <form class="" action="index.html" method="post">
-              <button type="button" class="btn btn-warning">Ändern</button>
-              <button type="button" class="btn btn-danger">Löschen</button>
-              <button type="button" class="btn btn-primary">Mehr</button>
+            <form class="" action="functions/deleteHistory.php" method="post">
+            <!--  <button type="button" class="btn btn-warning">Ändern</button>-->
+            <input type="text" name="EventID" id="historyLoeschenInput" value="">
+              <button type="submit" class="btn btn-danger" id="submitLöschen">Löschen</button>
+          <!--<div class="form-check form-switch ">
+                <input class="form-check-input"  type="checkbox" id="mySwitch1" name="darkmode" value="yes" checked>
+                <label class="form-check-label"  for="mySwitch">Ändern</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input"  type="checkbox" id="mySwitch2" name="darkmode" value="yes" >
+                <label class="form-check-label"  for="mySwitch">Löschen</label>
+              </div>-->
+          <!--  <button type="button" class="btn btn-primary">Mehr</button>-->
 
 
           </div>
-          <table class="table table-striped" >
+          <table class="table table-striped" id="tabelHistory" >
           <thead id="tableHeadSticky" >
          <tr>
            <th id="fixWidthDate">Datum</th>
@@ -161,8 +171,13 @@ include_once 'functions/queryEintraege.php';
 <p id="demo">ddd</p>
 -->
 
+<div class="form-check form-switch ">
+  <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+  <label class="form-check-label " for="mySwitch">Dark Mode</label>
+</div>
+<div id="AlertBox1">
 
-
+</div>
 
 </body>
 </html>
