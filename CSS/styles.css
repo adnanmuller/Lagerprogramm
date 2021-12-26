@@ -79,3 +79,7 @@ background-color: #0DCAF0;
 #mySwitch1, #mySwitch2{
   position:relative;left: 46%;
 }
+
+#historyLoeschenInput{display: none;}
+
+.selectInput{display: none;}

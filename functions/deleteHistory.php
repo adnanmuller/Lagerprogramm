@@ -1,10 +1,11 @@
 <?php
-
+$queryTrimmed;
 $eventIDs=$_POST['EventID'];
 echo $eventIDs;
-$testprint=substr($eventIDs,-3, 3);
-if($testprint==="and"){
-  $queryTrimmed=substr($eventIDs,0,-3);
+$testprint=substr($eventIDs,-1, 1);
+if($testprint===","){
+global  $queryTrimmed;
+$queryTrimmed=substr($eventIDs,0,-1);
 }
 echo $testprint;
 echo "<br>";
@@ -20,15 +21,17 @@ echo "<br>";
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 
-  $sql="DELETE FROM `logfile` WHERE `logfile`.`Event_ID`=  IN ('.$queryTrimmed.')';
+  $sql="DELETE FROM `logfile` WHERE `logfile`.`Event_ID`  IN (".$queryTrimmed.")";
   echo $sql;
   echo "<br>";
 
   if ($result=mysqli_query($con,$sql))
     {
         echo "SQL OK";
-        //  header('Location:../index.php?query=true');
-          }
+         header('Location:../index.php?query=true');
+       }else {
+         echo "values not deleted in DB";
+       }
 
 
 
