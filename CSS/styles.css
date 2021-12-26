@@ -83,3 +83,7 @@ background-color: #0DCAF0;
 #historyLoeschenInput{display: none;}
 
 .selectInput{display: none;}
+
+.scroll-active{
+  position: fixed;top:100px;right: 60px;
+}

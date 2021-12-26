@@ -6,10 +6,10 @@ $(document).ready(function() {
 
 
 
-  setTimeout(function(){
-      document.getElementById('hideMe').className = 'waa';
-  }, 5000);
-})
+//  setTimeout(function(){
+  //    document.getElementById('hideMe').className = 'waa';
+//  }, 5000);
+//})
 
 function clockUpdate() {
   var date = new Date();
@@ -51,3 +51,16 @@ function clockUpdate() {
   $('.digital-clock').text(h + ':' + m  );
   //$('.digital-clock-ampm').text(ampm);
 }
+
+
+
+    $(window).on('scroll', function () {
+        if ( $(window).scrollTop() > 780 ) {
+          console.log("scoll-down");
+            $('#submitLöschen').addClass('scroll-active');
+        } else {
+            $('#submitLöschen').removeClass('scroll-active',);
+        }
+    });
+
+  });
