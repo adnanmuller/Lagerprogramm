@@ -1,4 +1,4 @@
-console.log("hallo adi");
+
 
 $(document).ready(function() {
   clockUpdate();
@@ -56,7 +56,7 @@ function clockUpdate() {
 
     $(window).on('scroll', function () {
         if ( $(window).scrollTop() > 780 ) {
-          console.log("scoll-down");
+          //console.log("scoll-down");
             $('#submitLöschen').addClass('scroll-active');
         } else {
             $('#submitLöschen').removeClass('scroll-active',);

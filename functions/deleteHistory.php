@@ -1,4 +1,8 @@
 <?php
+if (isset($_POST['submit'])===false) {
+   header('Location:../index.php?query=false');
+  // code...
+}
 $queryTrimmed;
 $eventIDs=$_POST['EventID'];
 echo $eventIDs;
