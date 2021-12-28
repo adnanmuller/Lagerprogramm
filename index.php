@@ -109,7 +109,8 @@ include_once 'functions/queryEintraege.php';
             <form class="" action="functions/deleteHistory.php" method="post">
             <!--  <button type="button" class="btn btn-warning">Ändern</button>-->
             <input type="text" name="EventID" id="historyLoeschenInput" value="">
-              <button type="submit" class="btn btn-danger" id="submitLöschen">Löschen</button>
+              <input type="submit" class="btn btn-danger" name="action" value="Delete" id="submitLöschen"  />
+              <input type="submit" class="btn btn-info" name="action" value="Update" />
           <!--<div class="form-check form-switch ">
                 <input class="form-check-input"  type="checkbox" id="mySwitch1" name="darkmode" value="yes" checked>
                 <label class="form-check-label"  for="mySwitch">Ändern</label>
