@@ -91,3 +91,5 @@ background-color: #0DCAF0;
 .dateU{width: 20%;}
 
 .wrapperUpdate{border-bottom: 2px solid black;padding-bottom: 70px;padding-top: 20px;  background-color:#0DCAF0;width: 80%;margin: 0 auto;}
+
+.hidenInput{display: none;}

@@ -61,9 +61,10 @@ if ($_POST['action'] == 'Update') {
            }
 
 
-echo '<form action="/action_page.php ">';
+echo '<form action="updateDB.php " method="post">';
 
 //echo   '<div class="d-flex">';
+$i=0;
            while ($row=mysqli_fetch_assoc($result))
              {
               // echo '<div class="mb-3 mt-3">';
@@ -71,27 +72,27 @@ echo '<form action="/action_page.php ">';
                echo '<div class="wrapperUpdate ">';
                echo   '<div class="d-flex">';
                echo '<div class="flex-fill dateU ">';
-               echo '<label for="DatumU" class="form-label">Datum:</label>';
-               echo '<input type="date" class="form-control " id="" placeholder="Enter email" name="DatumU" value="'.$row["Datum"].'">';
+               echo '<label for="DatumU'.$i.'" class="form-label">Datum:</label>';
+               echo '<input type="date" class="form-control " id="" placeholder="Enter email" name="DatumU'.$i.'" value="'.$row["Datum"].'">';
               echo '</div>';
                // echo '<div class="mb-3 mt-3  ">';
                echo '<div class="flex-fill dateU ">';
-               echo '<label for="TimeU" class="form-label ">Zeit:</label>';
-               echo '<input type="time" class="form-control" arrayDeleteHistory placeholder="Enter email" name="TimeU" value="'.$row["Zeit"].'">';
+               echo '<label for="TimeU'.$i.'" class="form-label ">Zeit:</label>';
+               echo '<input type="time" class="form-control" arrayDeleteHistory placeholder="Enter email" name="TimeU'.$i.'" value="'.$row["Zeit"].'">';
                echo '</div>';
             //   echo '<div class="mb-3 mt-3  ">';
             echo '<div class="flex-fill  dateU">';
-               echo '<label for="PositionU" class="form-label">Position:</label>';
-               echo '<input type="text" class="form-control " id="" placeholder="Enter email" name="PositionU" value="'.$row["Position"].'">';
+               echo '<label for="PositionU'.$i.'" class="form-label">Position:</label>';
+               echo '<input type="text" class="form-control " id="" placeholder="Enter email" name="PositionU'.$i.'" value="'.$row["Position"].'">';
                echo '</div>';
             //   echo '<div class="mb-3 mt-3  flex-fill">';
               echo '<div class="flex-fill dateU ">';
-               echo '<label for="InventoryU" class="form-label">Inventory:</label>';
-               echo '<input type="text" class="form-control " id="" placeholder="Enter email" name="InventoryU" value="'.$row["Inventory"].'">';
+               echo '<label for="InventoryU'.$i.'" class="form-label">Inventory:</label>';
+               echo '<input type="text" class="form-control " id="" placeholder="Enter email" name="InventoryU'.$i.'" value="'.$row["Inventory"].'">';
                echo '</div>';
                echo '<div class="flex-fill dateU">';
-               echo '<label for="TechnikerU" class="form-label">Techniker:</label>';
-               echo '<input type="text" class="form-control " id="" placeholder="Enter email" name="TechnikerU" value="'.$row["Techniker"].'">';
+               echo '<label for="TechnikerU'.$i.'" class="form-label">Techniker:</label>';
+               echo '<input type="text" class="form-control " id="" placeholder="Enter email" name="TechnikerU'.$i.'" value="'.$row["Techniker"].'">';
                echo '</div>';
 
             //   echo '<div class="mb-3 mt-3  flex-fill">';
@@ -99,31 +100,36 @@ echo '<form action="/action_page.php ">';
               echo '</div>';
               echo   '<div class="d-flex">';
                echo '<div class="flex-fill">';
-               echo '<label for="ProblembeschreibungU" class="form-label">Problembeschreibung:</label>';
-               echo '<input type="text" class="form-control" id="" placeholder="Enter email" name="ProblembeschreibungU" value="'.$row["Problembeschreibung"].'">';
+               echo '<label for="ProblembeschreibungU'.$i.'" class="form-label">Problembeschreibung:</label>';
+               echo '<input type="text" class="form-control" id="" placeholder="Enter email" name="ProblembeschreibungU'.$i.'" value="'.$row["Problembeschreibung"].'">';
                echo '</div>';
                echo '<div class="flex-fill">';
-               echo '<label for="ProblemlösungPrimärU" class="form-label">Problemlösung Primär:</label>';
-               echo '<input type="text" class="form-control" id="" placeholder="Enter email" name="ProblemlösungPrimärU" value="'.$row["Problemloesung_primaer"].'">';
+               echo '<label for="ProblemlösungPrimärU'.$i.'" class="form-label">Problemlösung Primär:</label>';
+               echo '<input type="text" class="form-control" id="" placeholder="Enter email" name="ProblemlösungPrimärU'.$i.'" value="'.$row["Problemloesung_primaer"].'">';
                echo '</div>';
                echo '<div class="flex-fill">';
-               echo '<label for="ProblemlösungSekundärU" class="form-label">Problemlösung sekundär:</label>';
-               echo '<input type="text" class="form-control" id="" name="ProblemlösungSekundärU" value="'.$row["Problemloesung_sekundaer"].'">';
+               echo '<label for="ProblemlösungSekundärU'.$i.'" class="form-label">Problemlösung sekundär:</label>';
+               echo '<input type="text" class="form-control" id="" name="ProblemlösungSekundärU'.$i.'" value="'.$row["Problemloesung_sekundaer"].'">';
                echo '</div>';
                echo '</div>';
+               echo '<input  type="text"  name="eventID'.$i.'" class="hidenInput" value="'.$row["Event_ID"].'" >';
                echo '</div>';
             //   echo '</div>';
                //  echo '<option value="'.$row["Stoerungen"].'" idBind="'.$row["problemloesung_primaer"].'" idBindA="'.$row["problemloesung_sekundaer"].'" >';
               //   echo '<tr onclick="createAlertBox(this)" class="" ><td>'.$row["Datum"].'</td><td>'.$row["Zeit"].'</td><td>'.$row["Position"].'</td><td>'.$row["Inventory"].'</td><td>'.$row["Techniker"].'</td><td>'.$row["Problembeschreibung"].'</td><td>'.$row["Problemloesung_primaer"].'</td><td>'.$row["Problemloesung_sekundaer"].
                 // '</td><td><input type="checkbox" class="selectInput" name="'.$row["Event_ID"].'" id="'.$row["Event_ID"].'" value="'.$row["Event_ID"].'"></td></tr>';
+                  //echo $i;
+                  $i++;
+
              }
 
-
+echo '<input  type="text"  name="loopNumberEnd" class="hidenInput" value="'.$i.'" >';
 
  //echo '  </div>';
  echo '<div class="d-flex justify-content-center">';
-  echo '<button type="submit" id="submitUpdate" class="m-2 btn btn-primary">Submit</button></form>';
+  echo '<button type="submit" name="submit" value=true id="submitUpdate" class="m-2 btn btn-primary">Submit</button></form>';
  echo '</div>';
+
 //----------------------------DELETE-.-----------------------------------------
 } else if ($_POST['action'] == 'Delete') {
     //action for delete
