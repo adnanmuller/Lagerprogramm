@@ -22,7 +22,7 @@
 
 <?php
 //if (isset($_POST['submit'])===false) {
-  if (isset($_POST['action'])!="Delete" || isset($_POST['action'])!="Update") {
+  if ($_POST['action']!=="Delete" and $_POST['action']!=="Update") {
     //echo "no action POST";
     //echo $_POST['action'];
    header('Location:../index.php?query=false');
@@ -31,6 +31,7 @@
 $queryTrimmed;
 $eventIDs=$_POST['EventID'];
 //echo $eventIDs;
+if($eventIDs===""){   header('Location:../index.php?query=false');}
 $testprint=substr($eventIDs,-1, 1);
 if($testprint===","){
 global  $queryTrimmed;

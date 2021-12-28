@@ -2,10 +2,11 @@
 
 
 
-
+echo ("post ".$_POST['submit']);
+echo "<br>";
 echo "<br>";
 print_r($_POST);
-echo $_POST['submit'];
+
 
 
 
@@ -54,6 +55,8 @@ do{
 }else {
    header('Location:../index.php?query=false');
 }
+
+
 
 function UpdateDB($event,$datum,$zeit,$position,$inventory,$techniker,$problem,$loesung1,$loesung2){
 $con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
