@@ -191,7 +191,7 @@ include_once 'functions/queryEintraege.php';
 <?php
 
 
-
+//echo $_SERVER['DOCUMENT_ROOT']
 //echo(phpinfo());
 
 
