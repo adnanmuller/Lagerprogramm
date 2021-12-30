@@ -1,5 +1,5 @@
 <?php
-
+include_once 'functions/connectDB.php';
 echo "Datum: ".$_POST["Datum"]."<br>";
 echo "Zeit: ".$_POST["time"]."<br>";
 echo "Position: ".$_POST["position"]."<br>";
@@ -40,7 +40,7 @@ $DBname="techniker";
 
 // Create connection
 
-  $conn = new mysqli($servername, $username, $password,$DBname);
+  $conn =connectDB();
 
 
 

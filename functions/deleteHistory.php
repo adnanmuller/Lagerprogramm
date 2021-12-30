@@ -21,6 +21,7 @@
   <h1 id="index_H1">Techniker Organizer Update</h1>
 
 <?php
+include_once 'connectDB.php';
 //if (isset($_POST['submit'])===false) {
   if ($_POST['action']!=="Delete" and $_POST['action']!=="Update") {
     //echo "no action POST";
@@ -45,7 +46,7 @@ $queryTrimmed=substr($eventIDs,0,-1);
 if ($_POST['action'] == 'Update') {
   //echo "update";
 
-  $con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
+  $con=connectDB();
   // Check connection
   if (mysqli_connect_errno())
     {
@@ -134,7 +135,7 @@ echo '<input  type="text"  name="loopNumberEnd" class="hidenInput" value="'.$i.'
 //----------------------------DELETE-.-----------------------------------------
 } else if ($_POST['action'] == 'Delete') {
     //action for delete
-    $con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
+    $con=connectDB();
     // Check connection
     if (mysqli_connect_errno())
       {

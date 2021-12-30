@@ -1,6 +1,6 @@
 <?php
 
-
+include_once 'connectDB.php';
 
 echo ("post ".$_POST['submit']);
 echo "<br>";
@@ -59,7 +59,7 @@ do{
 
 
 function UpdateDB($event,$datum,$zeit,$position,$inventory,$techniker,$problem,$loesung1,$loesung2){
-$con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
+$con=connectDB();
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();

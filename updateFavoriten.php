@@ -1,6 +1,6 @@
 <?php
 
-
+include_once 'connectDB.php';
 
 
 
@@ -27,7 +27,7 @@ $DBname="techniker";
 
 // Create connection
 
-  $conn = new mysqli($servername, $username, $password,$DBname);
+  $conn =;
 
 
 

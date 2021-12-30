@@ -20,7 +20,7 @@ $queryFavoritenArray = $connQueryFavoriten->query($sqlLoopFavoriten);
 
 function echoFavoriteFilter($var1){
 
-  $con=mysqli_connect("localhost","client","clientCasinoBasel","techniker");
+  $con=connectDB();
   // Check connection
   if (mysqli_connect_errno())
     {

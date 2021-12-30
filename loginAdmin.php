@@ -41,7 +41,7 @@ $password = "clientCasinoBasel";
 $DBname="techniker";
 
 
-$link=connectDB($servername,$username,$password,$DBname);
+$link=connectDB();
 
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -101,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
-                          
+
                             // Redirect user to welcome page
                             header("location: admin.php");
                         } else{
