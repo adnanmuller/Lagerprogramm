@@ -64,6 +64,17 @@ function echoFavoriteFilter($var1){
             }
 
           }
+      }elseif ($var1==4) {
+          while ($row=mysqli_fetch_assoc($result)){
+              if($row["problemloesung_sekundaer"]==0){
+                  $row["problemloesung_sekundaer"]=" ";
+              }else{
+
+              echo  '<tr><td>'.$row["Stoerungen"].'</td><td>'.$row["problemloesung_primaer"].'</td><td>'.$row["problemloesung_sekundaer"].'</td></tr>';
+              }
+
+
+          }
       }
 
 

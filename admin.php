@@ -18,6 +18,7 @@
 <script src=""></script>
 <body>
   <?php
+  include_once 'functions/queryFavoriten.php';
   // Initialize the session
   session_set_cookie_params(0);
   session_start();
@@ -70,9 +71,14 @@
     </form>
 
   </div>
+
 </div>
-
-
+<table>
+  <tr><th>Problembeschreibung:</th><th>Problemlösung Primär:</th><th>Problemlösung sekundär:</th></tr>
+<?php
+echoFavoriteFilter(4);
+?>
+</table>
 
 
 </div>
