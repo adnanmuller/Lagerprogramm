@@ -136,7 +136,7 @@ include_once 'functions/queryEintraege.php';
            <th>Problemlösung sekundär</th>
          </tr>
        </thead>
-       <tbody>
+       <tbody id="historyTableBody">
          <tr>
            <?php
     queryEintraege(0);
